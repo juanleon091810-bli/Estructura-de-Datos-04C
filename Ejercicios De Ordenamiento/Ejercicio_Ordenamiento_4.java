@@ -24,7 +24,7 @@ public class Ejercicio_Ordenamiento_4 {
         }
 
         sort(nombresAlumnos);
-        
+
         System.out.println("Lista de asistencia ordenada alfabéticamente:");
         for (String nombre : nombresAlumnos) {
             System.out.println(nombre);

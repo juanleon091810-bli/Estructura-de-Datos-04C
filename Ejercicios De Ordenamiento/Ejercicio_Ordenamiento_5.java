@@ -36,36 +36,45 @@ public class Ejercicio_Ordenamiento_5 {
         scanner.close();
     }
 
-    public static void selection(int[] arr){
+    public static void selection(int[] arr) {
 
-        int n = arr.length;
-        for(int i = 0; i < n-1; i++){
-            int indMin = i;
-            for(int j = i+1; j < n; j++){
-                if (arr[j] < arr[indMin]) {
-                 indMin = j;   
-                }
+    int cambios = 0;
+
+    for (int i = 0; i < arr.length - 1; i++) {
+        int min = i;
+        for (int j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[min]) {
+                min = j;
             }
-
-            int temp = arr[indMin];
-            arr[indMin] = arr[i];
-            arr[i] = temp;
         }
+        if (min != i) {
+            int temp = arr[i];
+            arr[i] = arr[min];
+            arr[min] = temp;
+            cambios++; // contamos el swap
+        }
+        }
+
+        System.out.println("Cantidad de cambios: " + cambios);
     }
 
-    public static void insertion(int[] arr){
+  public static void insertion(int[] arr) {
 
-        int n = arr.length;
-        for(int i = 1; i < n; ++i){
-            int key = arr[i];
-            int j = i-1;
-            while (j >= 0 && arr[j] > key) {
-                arr[j+1] = arr[j];
-                j = j-1;
-                System.out.println(arr[j]);
-            }
-            
-            arr[j+1] = key;
+    int cambios = 0;
+
+    for (int i = 1; i < arr.length; i++) {
+
+        int key = arr[i];
+        int j = i - 1;
+
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+            cambios++; // contamos cada movimiento
         }
+        arr[j + 1] = key;
     }
+
+    System.out.println("Cantidad de cambios: " + cambios);
+}
 }
