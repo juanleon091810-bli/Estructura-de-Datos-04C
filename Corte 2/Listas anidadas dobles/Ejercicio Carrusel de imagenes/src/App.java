@@ -16,11 +16,17 @@ public class App {
         int opcion;
         
         do {
-            System.out.println("1. Siguiente Foto");
-            System.out.println("2. Foto Anterior");
-            System.out.println("3. Reproducir Galería");
-            System.out.println("4. Salir");
+            System.out.println("Opciones de galeria: ");
+            System.out.println("=========================");
+            System.out.println("1. Agregar foto");
+            System.out.println("2. Siguiente Foto");
+            System.out.println("3. Foto Anterior");
+            System.out.println("4. Reproducir Galería");
+            System.out.println("5. Salir");
+            System.out.println("=========================");
+            System.out.println("\nIngrese una opcion: ");
             opcion = sc.nextInt();
+            System.out.println("=========================");
 
             switch (opcion) {
 
