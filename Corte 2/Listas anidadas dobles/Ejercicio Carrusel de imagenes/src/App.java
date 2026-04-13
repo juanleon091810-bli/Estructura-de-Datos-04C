@@ -23,17 +23,30 @@ public class App {
             opcion = sc.nextInt();
 
             switch (opcion) {
+
                 case 1:
-                    galeria.adelantarFotos();
+                    System.out.println("Ingrese el nombre del archivo:");
+                    String nombreArchivo = sc.next();
+                    System.out.println("Ingrese el tamaño en MB:");
+                    double tamanoMB = sc.nextDouble();
+                    System.out.println("Ingrese la resolución:");
+                    String resolucion = sc.next();
+
+                    Fotografia foto = new Fotografia(nombreArchivo, tamanoMB, resolucion);
+                    galeria.agergarFoto(foto);
                     
                     break;
                 case 2:
-                    galeria.retorcederFotos();
+                    galeria.adelantarFotos();
+                    
                     break;
                 case 3:
-                    galeria.reproducirGaleria();
+                    galeria.retorcederFotos();
                     break;
                 case 4:
+                    galeria.reproducirGaleria();
+                    break;
+                case 5:
                     System.out.println("Saliendo...");
                     break;
                 default:
