@@ -13,7 +13,32 @@ public class App {
         
         Scanner sc = new Scanner(System.in);
         Galeria galeria = new Galeria();
+        int opcion;
         
-        
+        do {
+            System.out.println("1. Siguiente Foto");
+            System.out.println("2. Foto Anterior");
+            System.out.println("3. Reproducir Galería");
+            System.out.println("4. Salir");
+            opcion = sc.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    galeria.adelantarFotos();
+                    
+                    break;
+                case 2:
+                    galeria.retorcederFotos();
+                    break;
+                case 3:
+                    galeria.reproducirGaleria();
+                    break;
+                case 4:
+                    System.out.println("Saliendo...");
+                    break;
+                default:
+                    System.out.println("Opción no válida.");
+            }
+        } while (opcion != 4);
     }
 }

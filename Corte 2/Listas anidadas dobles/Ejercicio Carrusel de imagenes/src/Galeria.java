@@ -20,6 +20,16 @@ public class Galeria {
         }
     }
 
+    public void retorcederFotos(){
+        Fotografia actual = nueva;
+        if(actual == null || actual.prev == null){
+            System.out.println("No hay fotos para retroceder.");
+        }
+        else{
+            
+        }
+    }
+
     public void adelantarFotos(){
         Fotografia actual = nueva;
         if(actual == null || actual.next == null){
