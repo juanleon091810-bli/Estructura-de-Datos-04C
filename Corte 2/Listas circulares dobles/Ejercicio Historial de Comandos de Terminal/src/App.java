@@ -27,13 +27,15 @@ public class App {
             System.out.println("4. Eliminar comando actual");
             System.out.println("5. Mostrar historial completo");
             System.out.println("0. Salir");
+            System.out.println("\n=============================");
             System.out.print("Seleccione una opción: ");
             opcion = sc.nextInt();
+            System.out.println("==============================");
             sc.nextLine(); // Consumir el salto de línea
 
             switch (opcion) {
                 case 1:
-                    System.out.print("Ingrese el texto del comando: ");
+                    System.out.print("\nIngrese el texto del comando: ");
                     String texto = sc.nextLine();
                     System.out.print("¿El comando fue exitoso? (true/false): ");
                     boolean exitoso = sc.nextBoolean();
@@ -44,13 +46,13 @@ public class App {
                     historial.agregarComando(nuevoComando);
                     break;
                 case 2:
-                    historial.arriba(historial.head); // Navegar hacia arriba
+                    historial.arriba(historial.cursor); // Navegar hacia arriba
                     break;
                 case 3:
-                    historial.abajo(historial.head); // Navegar hacia abajo
+                    historial.abajo(historial.cursor); // Navegar hacia abajo
                     break;
                 case 4:
-                    historial.eliminarActual(historial.head); // Eliminar comando actual
+                    historial.eliminarActual(historial.cursor); // Eliminar comando actual
                     break;
                 case 5:
                     historial.mostrarCursor(); // Mostrar historial completo

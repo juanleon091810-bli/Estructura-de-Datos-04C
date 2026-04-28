@@ -2,10 +2,12 @@ public class Historial {
 
     Comando head;
     Comando tail;
+    Comando cursor;
 
     public Historial(){
         this.head= null;
         this.tail = null;
+        this.cursor = null;
     }
 
     public void agregarComando(Comando nuevo){
@@ -26,21 +28,27 @@ public class Historial {
     }
 
     public void arriba(Comando siguiente){
+        siguiente = cursor;
         if(siguiente != null){
-            siguiente = siguiente.next;
+            System.out.println("Comando actual >> " + siguiente);
+            siguiente = siguiente.prev;
         }
     }
+    // pasa al nodo anterior
 
     public void abajo(Comando anterior){
+        anterior = cursor;
         if(anterior != null){
-            anterior = anterior.prev;
+            System.out.println("Comando actual >> " + anterior);
+            anterior = anterior.next;
         }
     }
+    // pasa al nodo mas reciente
 
     public void mostrarCursor(){
         Comando actual = head;
         if (head == null) {
-            System.out.println("No hay comandos para eliminar dentro del historial");
+            System.out.println("No hay comandos para mostrar dentro del historial");
         }
         else{
             do {
