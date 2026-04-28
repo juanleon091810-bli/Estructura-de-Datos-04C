@@ -7,7 +7,7 @@ public class Historial {
     public Historial(){
         this.head= null;
         this.tail = null;
-        this.cursor = null;
+        this.cursor = head;// El cursor se inicializa en el nodo mas reciente agregado.
     }
 
     public void agregarComando(Comando nuevo){
@@ -27,20 +27,20 @@ public class Historial {
         System.out.println("\n====Comando agregado correctamente al historial====");
     }
 
-    public void arriba(Comando siguiente){
-        siguiente = cursor;
-        if(siguiente != null){
-            System.out.println("Comando actual >> " + siguiente);
-            siguiente = siguiente.prev;
+    public void arriba(Comando cursor){
+        cursor = this.cursor;
+        if(cursor != null){
+            System.out.println("Comando actual >> " + cursor);
+            cursor = cursor.prev;
         }
     }
     // pasa al nodo anterior
 
-    public void abajo(Comando anterior){
-        anterior = cursor;
-        if(anterior != null){
-            System.out.println("Comando actual >> " + anterior);
-            anterior = anterior.next;
+    public void abajo(Comando cursor){
+        cursor = this.cursor;
+        if(cursor != null){
+            System.out.println("Comando actual >> " + cursor);
+            cursor = cursor.next;
         }
     }
     // pasa al nodo mas reciente
