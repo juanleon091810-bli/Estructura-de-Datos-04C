@@ -62,5 +62,6 @@ public class App {
                     System.out.println("Opción no válida. Intente nuevamente.");
             }
         } while (opcion != 0);
+        sc.close();
     }
 }
